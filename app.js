@@ -45,7 +45,7 @@ function overlay(){
     canvas.setAttribute('height', style.height() * dpi);
 
     ctx.beginPath();
-    ctx.arc(canvas.width/2, canvas.height/2, 70, 0, 2 * Math.PI);
+    ctx.arc(canvas.width/2, canvas.height/2, 40, 0, 2 * Math.PI);
     ctx.stroke();
 }
 
