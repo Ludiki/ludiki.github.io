@@ -31,8 +31,21 @@ cameraTrigger.onclick = function() {
 // own
 function overlay(){
     var ctx = cameraOverlay.getContext("2d")
+    dpi = window.devicePixelRatio;
+
+    let style = {
+        height() {
+          return +getComputedStyle(canvas).getPropertyValue('height').slice(0,-2);
+        },
+        width() {
+          return +getComputedStyle(canvas).getPropertyValue('width').slice(0,-2);
+        }
+    }
+    canvas.setAttribute('width', style.width() * dpi);
+    canvas.setAttribute('height', style.height() * dpi);
+
     ctx.beginPath();
-    ctx.arc(95, 50, 40, 0, 2 * Math.PI);
+    ctx.arc(canvas.width/2, canvas.height/2, 70, 0, 2 * Math.PI);
     ctx.stroke();
 }
 
