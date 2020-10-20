@@ -31,8 +31,8 @@ cameraTrigger.onclick = function() {
 // own
 function overlay(){
     var ctx = cameraOverlay.getContext("2d")
-    ctx.moveTo(0, 0);
-    ctx.lineTo(200, 100);
+    ctx.beginPath();
+    ctx.arc(95, 50, 40, 0, 2 * Math.PI);
     ctx.stroke();
 }
 
