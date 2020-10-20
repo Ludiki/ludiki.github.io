@@ -38,3 +38,10 @@ html, body{
       right: 20px;
       z-index: 2;
   }
+  #camera--overlay{
+    position: fixed;
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    z-index: 20;
+  }
