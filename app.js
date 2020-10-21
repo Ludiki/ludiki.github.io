@@ -2,7 +2,7 @@
 window.addEventListener("DOMContentLoaded", function() {
     // Grab elements, create settings, etc.
     var video = document.getElementById('video');
-    var mediaConfig =  { video: true };
+    var mediaConfig =  { video: {facing:"environment"} };
     var errBack = function(e) {
         console.log('An error has occurred!', e)
     };
