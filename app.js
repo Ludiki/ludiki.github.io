@@ -1,12 +1,18 @@
-// Grab elements, create settings, etc.
-var video = document.getElementById('video');
+// Put event listeners into place
+window.addEventListener("DOMContentLoaded", function() {
+    // Grab elements, create settings, etc.
+    var video = document.getElementById('video');
+    var mediaConfig =  { video: true };
+    var errBack = function(e) {
+        console.log('An error has occurred!', e)
+    };
 
-// Get access to the camera!
-if(navigator.mediaDevices && navigator.mediaDevices.getUserMedia) {
-    // Not adding `{ audio: true }` since we only want video now
-    navigator.mediaDevices.getUserMedia({ video: true }).then(function(stream) {
-        //video.src = window.URL.createObjectURL(stream);
-        video.srcObject = stream;
-        video.play();
-    });
-}
+    // Put video listeners into place
+    if(navigator.mediaDevices && navigator.mediaDevices.getUserMedia) {
+        navigator.mediaDevices.getUserMedia(mediaConfig).then(function(stream) {
+            //video.src = window.URL.createObjectURL(stream);
+            video.srcObject = stream;
+            video.play();
+        });
+    }
+}, false);
