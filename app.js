@@ -1,12 +1,6 @@
-var video = document.getElementById('video');
-var canvas = document.getElementById("canvas");
-var ctx = canvas.getContext("2d");
-
 // Put event listeners into place
 window.addEventListener("DOMContentLoaded", function() {
-  ctx.moveTo(0,0);
-  ctx.lineTo(1000,1000);
-  ctx.stroke();
+    var video = document.getElementById('video');
     // Grab elements, create settings, etc.
     var mediaConfig = {
         video: {
